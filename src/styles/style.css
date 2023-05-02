@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+    scroll-behavior: smooth;
+}
+
+:root{
+    --primary-color:#1d1d1d;
+    --secondary-color: #f7f7f7;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url("/src/images/picture8.png") no-repeat fixed bottom / cover;
+}
+
+movie-list{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie-item {
+    width: 230px;
+    margin: 1.5rem 1.25rem 1rem 1.25rem;
+    border: 3px solid var(--secondary-color);
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-item img{
+    width:100%;
+}
+
+.movie-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+}
+
+.movie-info h3{
+    margin-top: 0;
+}
+
+.movie-info p{
+    font-size: smaller;
+}
+
+.movie-info span{
+    background-color: var(--primary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green{
+    color:lightgreen;
+}
+
+.movie-info span.orange{
+    color:orange;
+}
+
+.movie-info span.red{
+    color:red;
+}
+
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie-item:hover .overview{
+    transform: translateY(0);
+}
+
+#text-title{
+    color: var(--secondary-color);
+    text-align: center;
+}
+
+#text-title h1{
+    border: solid 1px var(--secondary-color);
+    border-radius: 10px;
+    margin: 0 20px;    
+    padding: 10px 0;
+}
+
+@media (max-width: 1245px) {
+    nav-bar{
+        padding: 0 50px;
+    }
+}
+    
+@media (max-width: 1140px){
+    nav-bar{
+        padding: 0px;
+    }
+    
+    nav-bar .logo{
+        padding-left: 20px;
+    }
+    
+    nav-bar .nav-items{
+        position: fixed;
+        z-index: 99;
+        top: 70px;
+        width: 100%;
+        left: -100%;
+        height: 100%;
+        padding: 10px 50px 0 50px;
+        text-align: center;
+        background: #171717;
+        display: inline-block;
+        transition: left 0.3s ease;
+    }
+    
+    nav-bar .nav-items.active{
+        left: 0px;
+    }
+    
+    nav-bar form{
+        position: absolute;
+        top: 80px;
+        right: 50px;
+        opacity: 0;
+        pointer-events: none;
+        transition: top 0.3s ease, opacity 0.1s ease;
+    }
+    
+    nav-bar form.active{
+        top: 95px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    nav-bar form:before{
+        position: absolute;
+        content: "";
+        top: -13px;
+        right: 0px;
+        width: 0;
+        height: 0;
+        z-index: -1;
+        border: 10px solid transparent;
+        margin: -20px 0 0;
+    }
+    
+    nav-bar form:after{
+        position: absolute;
+        content: '';
+        height: 60px;
+        padding: 2px;
+        background: none;
+        border-radius: 2px;
+        min-width: calc(100% + 20px);
+        z-index: -2;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    nav-bar .menu-icon{
+        display: block;
+    }
+    
+    nav-bar .search-icon{
+        display: block;
+    }
+    
+    nav-bar .search-icon.hide{
+        display: none;
+    }
+    
+    nav-bar .cancel-icon.show{
+        display: block;
+    }
+}
+
+@media (max-width: 980px){
+    nav-bar .menu-icon,
+    nav-bar .cancel-icon,
+    nav-bar .search-icon{
+        margin: 0 20px;
+    }
+    
+    nav-bar form{
+        right: 30px;
+    }
+}
+    
+@media (max-width: 350px){
+    nav-bar .menu-icon,
+    nav-bar .cancel-icon,
+    nav-bar .search-icon{
+        margin: 0 10px;
+        font-size: 16px;
+    }
+}
