@@ -23,13 +23,13 @@ class NavBar extends HTMLElement{
             }
 
             nav-bar{
-                background-color: var(--primary-color);
                 display: flex;
                 flex-wrap: wrap;
                 align-items: center;
                 justify-content: space-between;
                 height: 70px;
                 padding: 0 100px;
+                background-color: var(--primary-color);
                 color: var(--secondary-color);
             }
             
