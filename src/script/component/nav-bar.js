@@ -7,11 +7,10 @@ class NavBar extends HTMLElement{
         this._clickEvent = event;
         this.render();
     }
-
     
-  get value() {
-    return this.querySelector('#searchButtonElement').value;
-  }
+    get value() {
+        return this.querySelector('#searchButtonElement').value;
+    }
 
     render(){
         this.innerHTML =`
@@ -43,13 +42,6 @@ class NavBar extends HTMLElement{
                 text-decoration: none;
                 color: var(--secondary-color);
             }
-
-            nav-bar .nav-items{
-                display: flex;
-                flex: 1;
-                list-style: none;
-                padding: 0 0 0 40px;
-            }
             
             nav-bar form{
                 display: flex;
@@ -80,16 +72,6 @@ class NavBar extends HTMLElement{
                 border-radius: 3px;
                 border: none;
             }
-
-            nav-bar .search-icon, nav-bar .cancel-icon{
-                width: 40px;
-                color: var(--secondary-color);
-                text-align: center;
-                margin: 0 50px;
-                font-size: 18px;
-                cursor: pointer;
-                display: none;
-            }
         </style>
 
         <div class="logo">
@@ -97,8 +79,6 @@ class NavBar extends HTMLElement{
                 <h2>SPECTRUM</h2>
             </a>
         </div>
-        <div class="search-icon"><span class="fas fa-search"></span></div>
-        <div class="cancel-icon"><span class="fas fa-times"></span></div>
         <form id="form">
             <input type="text" placeholder="Search" id="search" class="search">
             <button id="searchButtonElement" type="submit" class="fas fa-search"></button>
